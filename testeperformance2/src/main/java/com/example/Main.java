@@ -3,7 +3,6 @@ package com.example;
 import com.example.exercicio01.MathOperations;
 import com.example.exercicio02.Desconto;
 import com.example.exercicio03.Cliente;
-import com.example.exercicio03.ClienteNulo;
 import com.example.exercicio03.Pedido;
 import com.example.exercicio04.Ajuste;
 import com.example.exercicio04.Produto;
