@@ -6,6 +6,7 @@ import com.example.exercicio03.Cliente;
 import com.example.exercicio03.Pedido;
 import com.example.exercicio04.Ajuste;
 import com.example.exercicio04.Produto;
+import com.example.exercicio07.RelatorioService;
 
 public class Main {
     public static void main(String[] args) {
@@ -40,5 +41,15 @@ public class Main {
         System.out.println("Preço original: " + produtoOriginal.getPreco());
         System.out.println("Preço com desconto: " + produtoComDesconto.getPreco());
 
+        System.out.println("------------------------------------------------------");
+
+        System.out.println("Exercicio 07 - Testando Criação de Relatorios");
+        RelatorioService service = new RelatorioService();
+        
+        service.gerarRelatorio("PDF");
+        service.gerarRelatorio("CSV");
+        service.gerarRelatorio("JSON");
+        service.gerarRelatorio("XML"); // Testando erro
+        
     }
 }
