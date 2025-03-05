@@ -7,6 +7,8 @@ import com.example.exercicio03.Pedido;
 import com.example.exercicio04.Ajuste;
 import com.example.exercicio04.Produto;
 import com.example.exercicio07.RelatorioService;
+import com.example.exercicio08.ContaBancaria;
+import com.example.exercicio09.FilaMensagens;
 
 public class Main {
     public static void main(String[] args) {
@@ -50,6 +52,43 @@ public class Main {
         service.gerarRelatorio("CSV");
         service.gerarRelatorio("JSON");
         service.gerarRelatorio("XML"); // Testando erro
+
+        System.out.println("------------------------------------------------------");
+
+        System.out.println("Exercicio 08 - Testando Saldo Bancário");
+        ContaBancaria conta = new ContaBancaria(100);
+
+        System.out.println("Saldo inicial: " + conta.getSaldo());
+
+        // Teste de consulta sem modificar saldo
+        System.out.println("Pode comprar item de R$ 50? " + conta.podeComprar(50));
+        System.out.println("Saldo após verificação: " + conta.getSaldo());
+
+        // Teste de compra efetiva
+        if (conta.realizarCompra(50)) {
+            System.out.println("Compra realizada!");
+        } else {
+            System.out.println("Saldo insuficiente!");
+        }
+
+        System.out.println("Saldo após compra: " + conta.getSaldo());
+
+        System.out.println("------------------------------------------------------");
+
+        System.out.println("Exercicio 09 - Testando Sistema de Mensageria");
+        FilaMensagens fila = new FilaMensagens();
+
+        fila.adicionarMensagem("Mensagem 1");
+        fila.adicionarMensagem("Mensagem 2");
+
+        System.out.println("Próxima mensagem (sem remover): " + fila.visualizarProximaMensagem());
+        System.out.println("Fila ainda contém: " + fila.visualizarProximaMensagem()); 
+        System.out.println("Obtendo e removendo mensagem: " + fila.obterProximaMensagem()); 
+
+        System.out.println("Próxima mensagem após remoção: " + fila.visualizarProximaMensagem()); 
+        System.out.println("Obtendo e removendo mensagem: " + fila.obterProximaMensagem()); 
+        System.out.println("Fila está vazia? " + fila.estaVazia());
+
         
     }
 }
