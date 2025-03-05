@@ -9,6 +9,8 @@ import com.example.exercicio04.Produto;
 import com.example.exercicio07.RelatorioService;
 import com.example.exercicio08.ContaBancaria;
 import com.example.exercicio09.FilaMensagens;
+import com.example.exercicio11.PedidoService;
+import com.example.exercicio11.StatusPedido;
 
 public class Main {
     public static void main(String[] args) {
@@ -89,6 +91,13 @@ public class Main {
         System.out.println("Obtendo e removendo mensagem: " + fila.obterProximaMensagem()); 
         System.out.println("Fila está vazia? " + fila.estaVazia());
 
+        System.out.println("------------------------------------------------------");
+
+        System.out.println("Exercicio 11 - Sistema de Pedidos com ENUM");
+        PedidoService servicePedido = new PedidoService();
+
+        servicePedido.atualizarStatus(StatusPedido.PENDENTE);
+        servicePedido.atualizarStatus(StatusPedido.ENVIADO);
         
     }
 }
